@@ -21,7 +21,8 @@ pipeline {
             steps {
                 script {
                     // Let's clone the source
-                    git 'https://github.com/SreedeviPK/mydemo.git';
+                  //  git 'https://github.com/SreedeviPK/mydemo.git';
+                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/SreedeviPK/mydemo.git']]])
                 }
             }
         }
