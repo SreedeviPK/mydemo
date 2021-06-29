@@ -39,8 +39,9 @@ pipeline {
                 script {
                     // If you are using Windows then you should use "bat" step
                     // Since unit testing is out of the scope we skip them
-                  //  bat "mvn clean install"
-                    bat(/${MAVENHOME}\bin\mvn -Dmaven.test.failure.ignore clean package/)
+                 
+                   // bat(/${MAVENHOME}\bin\mvn -Dmaven.test.failure.ignore clean package/)
+                      bat(/${MAVENHOME}\bin\mvn clean install/)
                 }
             }
         }
