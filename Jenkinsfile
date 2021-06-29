@@ -86,5 +86,14 @@ pipeline {
                 }
             }
         }
+        stage("deploy"){
+            steps{
+                script{
+                   // bat '''
+                    echo "deploy stage"
+                }
+            }
+        } 
+        
     }
 }
