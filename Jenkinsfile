@@ -90,8 +90,8 @@ pipeline {
         stage("deploy"){
             steps{
                 script{
-                   bat '''curl http://localhost:8081/nexus/content/repositories/myRepository/com/madhu/spring3-mvc-maven-xml-hello-world/1.2/spring3-mvc-maven-xml-hello-world-1.2.war -o C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps'''
-
+                  // bat '''curl http://localhost:8081/nexus/content/repositories/myRepository/com/madhu/spring3-mvc-maven-xml-hello-world/1.2/spring3-mvc-maven-xml-hello-world-1.2.war -o C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps'''
+                    mvn deploy:deploy-file -DgeneratePom=false -DrepositoryId=NEXUSHOME -Durl=http://localhost:8081/nexus/content/repositories/myRepository -DpomFile=pom.xml -Dfile=target/spring3-mvc-maven-xml-hello-world-1.2.war
                     echo "deploy stage"
                 }
             }
