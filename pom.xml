@@ -126,7 +126,7 @@
 		<repository>
 			<id>myRepository</id>
 			<name>myRepository</name>
-			<url>http://localhost:8081/nexus/content/repositories/mydemo/</url>
+			<url>http://localhost:8081/nexus/content/repositories/myRepository/</url>
 		</repository>
 	</distributionManagement>
 	
