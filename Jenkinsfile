@@ -45,10 +45,10 @@ pipeline {
                 }
             }
         }
-        stage("publish to nexus") {
+       /* stage("publish to nexus") {
             steps {
                 script {
-                   /* // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
+                   // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
                     pom = readMavenPom file: "pom.xml";
                     // Find built artifact under target folder
                     filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
@@ -84,16 +84,25 @@ pipeline {
                         mvn '''deploy:deploy-file -DgeneratePom=false -DrepositoryId=myRepository -Durl=http://localhost:8081/nexus/content/repositories/myRepository -DpomFile=C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/pom.xml -Dfile=C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/target/spring3-mvc-maven-xml-hello-world-1.2.war'''
                     } else {
                         error "*** File: ${artifactPath}, could not be found";
-                    }*/
-                        mvn '''deploy:deploy-file -DgeneratePom=false -DrepositoryId=myRepository -Durl=http://localhost:8081/nexus/content/repositories/myRepository -DpomFile=C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/pom.xml -Dfile=C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/target/spring3-mvc-maven-xml-hello-world-1.2.war'''
+                    }
+                      //  mvn '''deploy:deploy-file -DgeneratePom=false -DrepositoryId=myRepository -Durl=http://localhost:8081/nexus/content/repositories/myRepository -DpomFile=C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/pom.xml -Dfile=C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/target/spring3-mvc-maven-xml-hello-world-1.2.war'''
 
                 }
             }
-        }
+        }*/
+         stage("nexus"){
+            steps{
+                script{
+                   
+                     mvn '''deploy:deploy-file -DgeneratePom=false -DrepositoryId=myRepository -Durl=http://localhost:8081/nexus/content/repositories/myRepository -DpomFile=C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/pom.xml -Dfile=C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/target/spring3-mvc-maven-xml-hello-world-1.2.war'''
+                }
+            }
+        } 
+        
         stage("deploy"){
             steps{
                 script{
-                   bat '''curl http://localhost:8081/nexus/content/repositories/myRepository/com/madhu/spring3-mvc-maven-xml-hello-world/1.2/spring3-mvc-maven-xml-hello-world-1.2.war -o C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps'''
+                   //bat '''curl http://localhost:8081/nexus/content/repositories/myRepository/com/madhu/spring3-mvc-maven-xml-hello-world/1.2/spring3-mvc-maven-xml-hello-world-1.2.war -o C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps'''
                  
                     echo "deploy stage"
                 }
