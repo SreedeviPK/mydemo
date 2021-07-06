@@ -94,7 +94,8 @@ pipeline {
             steps{
                 script{
                     pom = readMavenPom file: "pom.xml";
-                     (/${MAVENHOME}\bin\mvn deploy:deploy-file -DgeneratePom=false -DrepositoryId=myRepository -Durl=NEXUS_URL -DpomFile=pom -Dfile="C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/target/spring3-mvc-maven-xml-hello-world-1.2.war")
+                     artifactPath = filesByGlob[0].path;
+                     (/${MAVENHOME}\bin\mvn deploy:deploy-file -DgeneratePom=false -DrepositoryId=myRepository -Durl=NEXUS_URL -DpomFile=pom -Dfile= artifactPath)
                 }
             }
         } 
