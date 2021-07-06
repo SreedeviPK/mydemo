@@ -93,8 +93,8 @@ pipeline {
          stage("nexus"){
             steps{
                 script{
-                   
-                     (/${MAVENHOME}\bin\mvn deploy:deploy-file -DgeneratePom=false -DrepositoryId=myRepository -Durl=NEXUS_URL -DpomFile="C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/pom.xml" -Dfile="C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/target/spring3-mvc-maven-xml-hello-world-1.2.war")
+                    pom = readMavenPom file: "pom.xml";
+                     (/${MAVENHOME}\bin\mvn deploy:deploy-file -DgeneratePom=false -DrepositoryId=myRepository -Durl=NEXUS_URL -DpomFile=pom -Dfile="C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/target/spring3-mvc-maven-xml-hello-world-1.2.war")
                 }
             }
         } 
