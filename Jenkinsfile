@@ -100,7 +100,7 @@ pipeline {
             }
         } 
         
-        stage("deploy"){
+       /* stage("deploy"){
             steps{
                 script{
                   // //bat '''curl http://localhost:8081/nexus/content/repositories/myRepository/com/madhu/spring3-mvc-maven-xml-hello-world/1.2/spring3-mvc-maven-xml-hello-world-1.2.war -o C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps'''
@@ -108,7 +108,7 @@ pipeline {
                     echo "deploy stage"
                 }
             }
-        } 
+        } */
         
     }
 }
