@@ -104,7 +104,7 @@ pipeline {
         stage("deploy"){
             steps{
                 script{
-                  bat '''curl http://localhost:8081/nexus/content/repositories/myRepository/com/madhu/spring3-mvc-maven-xml-hello-world/1.2/spring3-mvc-maven-xml-hello-world-1.2.war -o C:/softwares/apache-tomcat-8.5.68.zip/apache-tomcat-8.5.68/webapps'''
+                  bat '''curl http://localhost:8081/nexus/content/repositories/myRepository/com/madhu/spring3-mvc-maven-xml-hello-world/1.2/spring3-mvc-maven-xml-hello-world-1.2.war -o C:/softwares/apache-tomcat-8.5.68.zip/apache-tomcat-8.5.68/webapps/demo.war'''
                  
                     echo "deploy stage"
                 }
