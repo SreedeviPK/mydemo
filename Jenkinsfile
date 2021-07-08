@@ -94,9 +94,9 @@ pipeline {
             steps{
                 script{
                     echo "published"
-                   // pom = readMavenPom file: "pom.xml";
-                   //  artifactPath = filesByGlob[0].path;
-                   // mvn deploy:deploy-file -DgeneratePom=false -DrepositoryId=myRepository -Durl=NEXUS_URL -DpomFile=pom -Dfile= artifactPath
+                    pom = readMavenPom file: "pom.xml";
+                    artifactPath = filesByGlob[0].path;
+                    mvn deploy:deploy-file -DgeneratePom=false -DrepositoryId=myRepository -Durl=NEXUS_URL -DpomFile=pom -Dfile= artifactPath
                 }
             }
         } 
