@@ -119,7 +119,7 @@
          	<version>2.8.2</version>
           </plugin>
 	
-	<!----------------------------------TRIAL --------------------->
+	<!-- --------------------------------TRIAL ------------------ -->
 	
 	<plugin>
   	 <groupId>org.sonatype.plugins</groupId>
@@ -140,7 +140,7 @@
      	 <skipStaging>true</skipStaging>
    	</configuration>
 	</plugin>
-			<!-----------TRIAL--------------->
+			<!-- ---------TRIAL------------- -->
 			
 		</plugins>
 	</build>
