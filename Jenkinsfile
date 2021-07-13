@@ -99,7 +99,7 @@ pipeline {
                    // mvn deploy:deploy-file -DgeneratePom=false -DrepositoryId=myRepository -Durl=NEXUS_URL -DpomFile=pom -Dfile= artifactPath
                     
                  //  bat(/${MAVENHOME}\bin\
-                    withMaven{mvn deploy:deploy-file -DgeneratePom=false -DrepositoryId=myRepository -Durl="http://localhost:8081/nexus/content/repositories/myRepository" -DpomFile="C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/pom.xml" -Dfile="C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/target/spring3-mvc-maven-xml-hello-world-1.2.war"}
+                    withMaven{bat(/${MAVENHOME}\bin\mvn deploy:deploy-file -DgeneratePom=false -DrepositoryId=myRepository -Durl="http://localhost:8081/nexus/content/repositories/myRepository" -DpomFile="C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/pom.xml" -Dfile="C:/Users/sreedevi.k03/.jenkins/workspace/mydemo/target/spring3-mvc-maven-xml-hello-world-1.2.war")}
                 }
             }
         } 
