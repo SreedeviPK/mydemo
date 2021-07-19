@@ -109,7 +109,7 @@ pipeline {
             steps{
                 script{
                      //bat '''curl http://localhost:8081/nexus/content/repositories/myRepository/com/madhu/spring3-mvc-maven-xml-hello-world/1.2/spring3-mvc-maven-xml-hello-world-1.2.war -o C:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps'''
-                    wget --user=admin --password=admin123 'http://localhost:8081/nexus/service/local/repositories/myRepository/content/com/madhu/spring3-mvc-maven-xml-hello-world/1.2/spring3-mvc-maven-xml-hello-world-1.2.war'
+                    wget --user=admin --password=admin123 "http://localhost:8081/nexus/service/local/repositories/myRepository/content/com/madhu/spring3-mvc-maven-xml-hello-world/1.2/spring3-mvc-maven-xml-hello-world-1.2.war"
                     echo "deploy stage"
                 }
             }
